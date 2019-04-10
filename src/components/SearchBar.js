@@ -11,6 +11,7 @@ class SearchBar extends React.Component{
     onFormSubmit = (event) => {
         event.preventDefault();
         
+        this.props.onFormSubmit(this.state.term);
     };
 
     render(){
@@ -20,6 +21,7 @@ class SearchBar extends React.Component{
                     <div className="field">
                         <label>Video Search</label>
                         <input 
+                            autoFocus
                             type="text" 
                             value={this.state.term}
                             onChange={this.onInputChange}
