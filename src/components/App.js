@@ -13,13 +13,14 @@ class App extends React.Component {
     };
 
     componentDidMount(){
-        this.onTermSubmit('YouTube Rewind');
+        this.onTermSubmit('IPL');
     }
 
     onTermSubmit = async term => {
         const response = await youtube.get('/search', {
             params: {
-                q: term
+                q: term,
+                chart: 'mostPopular'
             }
         });
 
@@ -51,12 +52,18 @@ class App extends React.Component {
                 </div>
             );
         }
-        return <Loader message="Please wait while are getting ready to give you a lite YouTube Experience!"/>;
+        return <Loader message="Please wait while are getting ready to give you a YouTube Lite Experience!"/>;
     };
 
     render() {
         return (
             <div className="border red">
+                <div className="ui stackable fluid massive top menu">
+                    <div className="column">
+                        <img alt="YouTube Lite Edition Home" src={"yt.png"} />
+                    </div>
+                </div>
+                
                 {this.renderContent()}
             </div>
         )
