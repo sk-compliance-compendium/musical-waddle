@@ -13,7 +13,7 @@ class App extends React.Component {
     };
 
     componentDidMount(){
-        this.onTermSubmit('YouTube Rewind');
+        this.onTermSubmit('IPL');
     }
 
     onTermSubmit = async term => {
