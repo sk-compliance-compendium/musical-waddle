@@ -34,6 +34,10 @@ class App extends React.Component {
         this.setState({selectedVideo: video});
     };
 
+    reloadPage() {
+        window.location.reload();
+    }
+
     renderContent() {
         if((this.state.videos.length) > 0){
             return(
@@ -59,7 +63,7 @@ class App extends React.Component {
         return (
             <div className="border red">
                 <div className="ui stackable fluid massive top menu">
-                    <div className="column">
+                    <div onClick={this.reloadPage} className="column">
                         <img alt="YouTube Lite Edition Home" src={"yt.png"} />
                     </div>
                 </div>
